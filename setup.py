@@ -12,6 +12,7 @@ setup(
     version = "1.0",
     author = "ree",
     author_email = "r33t4m@gmail.com",
-    packages = find_packages(),
-    requires = get_requirements()
+    # package_dir = {"": "src"},                 # take src as the root of the package
+    packages = find_packages(),     # check all files with __init__.py inside src
+    install_requires = get_requirements()
 )

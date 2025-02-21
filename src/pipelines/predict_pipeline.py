@@ -54,7 +54,7 @@ class Predictor:
 
             data_transformed = self.preprocessor.transform(data_df)
             y_pred = self.model.predict(data_transformed)
-            print( y_pred)
+            return y_pred
 
         except Exception as e:
             raise CustomException(e)
@@ -62,7 +62,7 @@ class Predictor:
 
 if __name__ == "__main__":
     predictor = Predictor()
-    predictor.predict(
+    print(predictor.predict(
         car_name="Maruti Alto",
         vehicle_age=15,
         km_driven=120000,
@@ -73,6 +73,6 @@ if __name__ == "__main__":
         seller_type="Individual",
         fuel_type="Petrol",
         transmission_type="Manual"
-    )
+    ))
 
 
