@@ -1,0 +1,35 @@
+name: CI Pipeline
+
+on: push
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo   # Pulls latest code to machine
+        uses: actions/checkout@v4
+
+      - name: Set up python    # Install python on machine
+        uses: actions/setup-python@v4
+        with: 
+          python-version: "3.12"
+
+      - name: Install dependencies
+        uses: pip install -r requirements.txt
+
+      - name: Run Training Pipeline
+        uses: python -m src.pipelines.train_pipeline
+
+      - name: Store Trained Model
+        uses: actions/upload-artifact@v4
+        with:
+          name: Trained Model
+          path: artifacts/model.pkl
+      
+      - name: Store Preprocessor
+        uses: actions/upload-artifact@v4
+        with:
+          name: Preprocessor
+          path: artifacts/preprocessor.pkl
+      
