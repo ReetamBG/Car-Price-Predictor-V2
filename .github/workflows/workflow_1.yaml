@@ -16,10 +16,10 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        uses: pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Run Training Pipeline
-        uses: python -m src.pipelines.train_pipeline
+        run: python -m src.pipelines.train_pipeline
 
       - name: Store Trained Model
         uses: actions/upload-artifact@v4
