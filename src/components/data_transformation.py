@@ -54,12 +54,12 @@ class DataTransformer:
             preprocessor = ColumnTransformer([
                 ("numerical_feature_transforms", numerical_features_pipeline, numerical_features),
                 ("categorical_feature_transforms", categorical_features_pipeline, categorical_features),
-                ("car_name_transorm", FrequencyEncoder, "car_name")
+                ("car_name_transform", FrequencyEncoder, "car_name")
             ])
 
             logging.info("Preprocessor object created")
 
-            return self.config.preprocessor_object_file_path
+            return preprocessor
 
         except Exception as e:
             raise CustomException(e)
@@ -71,7 +71,7 @@ class DataTransformer:
             train_data = pd.read_csv(train_data_path)
             test_data = pd.read_csv(test_data_path)
 
-            preprocessor = load_object(self.get_data_preprocessor_object())
+            preprocessor = self.get_data_preprocessor_object()
             
             X_train = train_data.drop(columns=["brand", "model", "selling_price"])
             X_test = test_data.drop(columns=["brand", "model", "selling_price"])
