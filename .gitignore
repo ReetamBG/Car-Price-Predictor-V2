@@ -1,5 +1,6 @@
 # Additional files added by me
-artifacts/
+artifacts/*         # Ignore artifacts
+!artifacts/*.dvc    # Keep DVC files 
 
 
 # Byte-compiled / optimized / DLL files

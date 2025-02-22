@@ -1,7 +1,4 @@
 [core]
-    remote = supabase-storage
-['remote "origin"']
-    url = s3://artifacts/
-    endpointurl = https://vyuzbnzlahwfaihwsmqi.supabase.co/storage/v1/s3
-['remote "supabase-storage"']
-    url = https://vyuzbnzlahwfaihwsmqi.supabase.co/storage/v1/s3
+    remote = storage
+['remote "storage"']
+    url = gdrive://1PGThYSjqx3YHY7j7le4bG_cSAG41SM3W
