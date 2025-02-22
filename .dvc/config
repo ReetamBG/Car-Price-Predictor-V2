@@ -1,0 +1,7 @@
+[core]
+    remote = supabase-storage
+['remote "supabase-storage"']
+    url = s3://artifacts
+    endpointurl = https://vyuzbnzlahwfaihwsmqi.supabase.co/storage/v1/s3
+    access_key_id = e558aa2b5ee606030f1818a9425c893a
+    secret_access_key = c8429559f5daf2b36280cd0f84561f3bad397a7b1e9b898c2329f162096d9c35
