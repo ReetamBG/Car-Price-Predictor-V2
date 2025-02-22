@@ -4,6 +4,11 @@ from src.pipelines.predict_pipeline import Predictor
 
 data = pd.read_csv("artifacts/raw_data.csv")
 
+print("📁 File Loaded Successfully!")
+print("📁 Data:", data)
+print("📝 Columns in Data:", list(data.columns))
+print("🔍 First 5 Rows:\n", data.head())
+
 st.title("Used Car Price Predictor")
 
 form = st.form("car_details_form")
