@@ -18,18 +18,29 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Build the src package
+        run: pip install -e .
+
       - name: Run Training Pipeline
         run: python -m src.pipelines.train_pipeline
 
-      - name: Store Trained Model
-        uses: actions/upload-artifact@v4
-        with:
-          name: Trained Model
-          path: artifacts/model.pkl
+      # - name: Store Trained Model
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: Trained Model
+      #     path: artifacts/model.pkl
       
-      - name: Store Preprocessor
-        uses: actions/upload-artifact@v4
-        with:
-          name: Preprocessor
-          path: artifacts/preprocessor.pkl
+      # - name: Store Preprocessor
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: Preprocessor
+      #     path: artifacts/preprocessor.pkl
+
+      # STORE ARTIFACTS IN SUPABASE USING DVC
+      - name: Store Artifacts in Supabase
+        run: |
+          dvc add artifacts/model.pkl
+          dvc add artifacts/preprocessor.pkl
+          dvc add artifacts/raw_data.csv
+          dvc push
       

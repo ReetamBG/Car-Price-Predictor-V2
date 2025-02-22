@@ -22,7 +22,6 @@ billiard==4.2.1
 bleach==6.2.0
 blinker==1.9.0
 cachetools==5.5.2
--e git+https://github.com/ReetamBG/Car-Price-Predictor-V2.git@e9d19a389d26a67b206b5af908c2f75d456a91f9#egg=car_price_predictor
 celery==5.4.0
 certifi==2025.1.31
 cffi==1.17.1
@@ -205,5 +204,3 @@ websocket-client==1.8.0
 websockets==15.0
 yarl==1.18.3
 zc.lockfile==3.0.post1
-
--e .
