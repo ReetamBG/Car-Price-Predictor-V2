@@ -10,8 +10,9 @@ cols = [
     "selling_price"
 ]
 
-data = pd.read_csv("artifacts/raw_data.csv", header=None, skiprows=1)
+data = pd.read_csv("artifacts/raw_data.csv", header=None, skiprows=2)
 data.columns = cols
+# Workaround end
 
 print("📁 File Loaded Successfully!")
 print("📁 Data:", data)
