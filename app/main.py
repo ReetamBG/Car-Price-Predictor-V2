@@ -2,12 +2,16 @@ import streamlit as st
 import pandas as pd
 from src.pipelines.predict_pipeline import Predictor
 
-# adding this workaround. Render has some problem with reading the columns otherwise
+# Adding this workaround. Render has some problem with reading the columns otherwise
 cols = [
+    "Unnamed: 0",
     "car_name", "brand", "model", "vehicle_age", "km_driven", "seller_type",
-    "fuel_type", "transmission_type", "mileage", "engine", "max_power", "seats"
+    "fuel_type", "transmission_type", "mileage", "engine", "max_power", "seats",
+    "selling_price"
 ]
-data = pd.read_csv("artifacts/raw_data.csv", usecols=cols)
+
+data = pd.read_csv("artifacts/raw_data.csv", header=None, skiprows=1)
+data.columns = cols
 
 print("📁 File Loaded Successfully!")
 print("📁 Data:", data)
