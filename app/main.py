@@ -2,7 +2,12 @@ import streamlit as st
 import pandas as pd
 from src.pipelines.predict_pipeline import Predictor
 
-data = pd.read_csv("artifacts/raw_data.csv", header=0)
+# adding this workaround. Render has some problem with reading the columns otherwise
+cols = [
+    "car_name", "brand", "model", "vehicle_age", "km_driven", "seller_type",
+    "fuel_type", "transmission_type", "mileage", "engine", "max_power", "seats"
+]
+data = pd.read_csv("artifacts/raw_data.csv", usecols=cols)
 
 print("📁 File Loaded Successfully!")
 print("📁 Data:", data)
