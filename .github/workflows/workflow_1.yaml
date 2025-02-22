@@ -36,7 +36,7 @@ jobs:
       #     name: Preprocessor
       #     path: artifacts/preprocessor.pkl
 
-      # STORE ARTIFACTS IN SUPABASE USING DVC
+      # STORE ARTIFACTS IN SUPABASE USING DVC - Gonna add auth for DVC Supabase Later
       - name: Store Artifacts in Supabase
         run: |
           dvc add artifacts/model.pkl
