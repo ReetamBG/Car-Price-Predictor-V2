@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from src.pipelines.predict_pipeline import Predictor
 
-data = pd.read_csv("artifacts/raw_data.csv")
+data = pd.read_csv("artifacts/raw_data.csv", header=0)
 
 # print("📁 File Loaded Successfully!")
 # print("📁 Data:", data)
