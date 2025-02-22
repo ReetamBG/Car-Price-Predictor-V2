@@ -1,0 +1,3 @@
+['remote "origin"']
+    url = s3://artifacts/
+    endpointurl = https://vyuzbnzlahwfaihwsmqi.supabase.co/storage/v1/s3
