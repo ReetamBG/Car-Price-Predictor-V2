@@ -1,0 +1,7 @@
+[core]
+    remote = supabase
+['remote "supabase"']
+    url = s3://artifacts/DVC_Storage
+    endpointurl = https://vyuzbnzlahwfaihwsmqi.supabase.co/storage/v1/s3
+    access_key_id = 8ef8414a7424a41e532129c606aeed90
+    secret_access_key = 9d8bca8cb67fe52a44530faae41ecdf528d42bd3e02ca66b9beb271e1da6f722
