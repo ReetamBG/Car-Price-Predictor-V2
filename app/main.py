@@ -2,17 +2,7 @@ import streamlit as st
 import pandas as pd
 from src.pipelines.predict_pipeline import Predictor
 
-# Adding this workaround. Render has some problem with reading the columns otherwise
-cols = [
-    "Unnamed: 0",
-    "car_name", "brand", "model", "vehicle_age", "km_driven", "seller_type",
-    "fuel_type", "transmission_type", "mileage", "engine", "max_power", "seats",
-    "selling_price"
-]
-
-data = pd.read_csv("artifacts/raw_data.csv", header=None, skiprows=2)
-data.columns = cols
-# Workaround end
+data = pd.read_csv("artifacts/raw_data.csv")
 
 st.title("Used Car Price Predictor")
 st.dataframe(data)
