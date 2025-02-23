@@ -14,15 +14,8 @@ data = pd.read_csv("artifacts/raw_data.csv", header=None, skiprows=2)
 data.columns = cols
 # Workaround end
 
-print("📁 File Loaded Successfully!")
-print("📁 Data:", data)
-print("📝 Columns in Data:", list(data.columns))
-print("🔍 First 5 Rows:\n", data.head())
-
 st.title("Used Car Price Predictor")
 st.dataframe(data)
-st.dataframe(data.head())
-st.subheader(data.columns)
 
 form = st.form("car_details_form")
 
